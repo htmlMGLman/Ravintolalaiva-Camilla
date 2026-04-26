@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fi">
+
+<head>
+	<meta charset="utf-8">
+	<title>Galleria</title>
+	<meta name="description" content="Ravintolalaiva Camilla">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- linkki tuohon CSS-tyylitiedostoon -->
+	<link rel="stylesheet" href="styles/style1.css">
+</head>
+
+<body>
+
+<!-- Sivun yläosa (header), sisältää logon ja navigaation -->
+<header>
+	<div class="topbar">
+		<!-- Sivuston logo -->
+		<img src="images/Logo.png" alt="Camilla logo" class="logo">
+
+		<!-- Navigointivalikko sivujen välillä -->
+		<nav>
+			<ul>
+				<li><a href="index.html">Etusivu</a></li>
+				<li><a href="gallery.html">Galleria</a></li>
+				<li><a href="about.html">Muuta</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<!-- sivuston pääosa alue -->
+<main>
+
+	<!-- Sivun pääotsikko -->
+	<h1>Tietoa ja yhteystiedot</h1>
+
+	<!-- Sijaintiosio -->
+	<h2>Sijainti</h2>
+	<p>
+	Ravintolalaiva Camilla sijaitsee Lappeenrannan satamassa Saimaan rannalla.
+	</p>
+
+	<!-- Google Maps -upotus, näyttää sijainnin kartalla, kiitti tekoäly-->
+	<iframe 
+	src="https://www.google.com/maps?q=Lappeenranta+satama&output=embed"
+	width="100%" height="300"
+	title="Lappeenrannan satama kartalla">
+	</iframe>
+
+	<!-- Palvelut-osio: lista mitä laiva tarjoaa -->
+	<h2>Palvelut</h2>
+	<p>Ravintola</p>
+	<p>Risteilyt Saimaalla</p>
+	<p>Aurinkokansi</p>
+
+	<!-- Yhteystiedot yritykselle -->
+	<h2>Yhteystiedot</h2>
+	<p>
+	Puhelin: 040 123 4567<br>
+	Sähköposti: info@camilla.fi
+	</p>
+	
+	<!-- Palauteosio käyttäjälle, otettu suoraan aiemasta kotisivu lpr työstä -->
+	<h2>Laivalle palautetta</h2>
+	<p>Kerro mielipiteesi Risteilystä :D</p>
+
+	<!-- Lomake käyttäjän palautteen lähettämistä varten -->
+	<form action="#" method="post">
+
+		<label for="nimi">Nimi:</label><br>
+		<input type="text" id="nimi" name="nimi" required><br><br>
+
+		<label for="email">Sähköposti:</label><br>
+		<input type="email" id="email" name="email"><br><br>
+
+		<label for="puhelin">Puhelin:</label><br>
+		<input type="tel" id="puhelin" name="puhelin"><br><br>
+
+		<label for="palaute">Palaute:</label><br>
+		<textarea id="palaute" name="palaute" rows="5" cols="40" required></textarea><br><br>
+
+		<input type="submit" value="Lähetä palaute">
+
+	</form>
+
+</main>
+
+</body>
+</html>

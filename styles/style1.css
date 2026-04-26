@@ -1,0 +1,237 @@
+/* ranka asetukset koko sivulle */
+body {
+	background-color: #c7e5ff;
+	font-family: Arial, sans-serif;
+	color: #222;
+	line-height: 1.6;
+	margin: 0;
+}
+
+/* HERO */
+.hero {
+	height: 100vh;
+	color: white;
+
+	background-image: url("../images/satamalla.jpg");
+	background-size: cover;
+	background-position: center;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: relative;
+	text-align: center;
+}
+
+/* Hero overlay */
+.hero::before {
+	pointer-events: none;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background: linear-gradient(
+		to bottom,
+		rgba(0,0,0,0.3),
+		rgba(0,0,0,0.8)
+	);
+}
+
+.hero-content {
+	position: relative;
+	z-index: 1;
+}
+
+/* navigaatio osio */
+.topbar {
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+}
+
+nav ul {
+	display: flex;
+	gap: 20px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav li {
+	margin: 0 10px;
+	font-size: 40px;
+}
+
+nav a {
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 8px 12px;
+	display: block;
+}
+
+/* galleria galleria sivustolle */
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+}
+
+.gallery img {
+	width: 100%;
+	border-radius: 10px;
+	transition: transform 0.3s;
+}
+
+.gallery img:hover {
+	transform: scale(1.05);
+	filter: brightness(1.1);
+}
+
+/* päällimmäinen kontentti */
+main {
+	background: white;
+	color: #222;
+	border-radius: 15px;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+	padding: 40px;
+	margin: -50px auto 20px auto;
+	max-width: 900px;
+	text-align: center;
+	position: relative;
+	z-index: 2;
+}
+
+/* Otsikko ja teksti asettelut */
+h1 {
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 26px;
+	margin-top: 30px;
+}
+
+p {
+	font-size: 18px;
+}
+
+/* Se juttu jonka avulla saa näkyville esim. mapsi ja antaa preview hommelin. */
+iframe {
+	border-radius: 10px;
+	margin: 15px 0;
+}
+
+/* musa boxi */
+.audio-box {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+
+	background: rgba(255,255,255,0.2);
+	padding: 10px 15px;
+	border-radius: 10px;
+
+	backdrop-filter: blur(10px);
+	max-width: 300px;
+}
+
+.audio-box audio {
+	width: 100%;
+	margin: 5px 0;
+}
+
+/* Responsiivisuus, Mikalle tärkeä homma */
+@media (max-width: 768px) {
+
+	.topbar {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	nav ul {
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+
+	nav li {
+		font-size: 18px;
+	}
+
+	.hero {
+		height: 60vh;
+	}
+
+	.hero-content h1 {
+		font-size: 36px;
+	}
+
+	.hero-content p {
+		font-size: 18px;
+	}
+
+	h1 {
+		font-size: 28px;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+
+	.gallery {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Muut justkat */
+html {
+	scroll-behavior: smooth;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a:hover {
+	opacity: 0.8;
+}
+
+.hero-link {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
+
+/* videoon linkki ja feikki thumbnaili joka on oikeastaan kuva, koska
+tuli joku youtuben firewall error ja näytti vaan harmaan ruudun
+thumbnailina. */
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 800px;
+	margin: 20px auto;
+}
+
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.video-thumb {
+	width: 100%;
+	max-width: 800px;
+	border-radius: 10px;
+}
